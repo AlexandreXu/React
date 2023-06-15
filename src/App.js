@@ -1,4 +1,3 @@
-// App.js
 import React from 'react';
 import './App.css';
 import {BrowserRouter, Navigate, Route, Routes} from 'react-router-dom';
@@ -6,6 +5,10 @@ import LayoutMain from "./layouts/LayoutMain/LayoutMain";
 import Home from "./containers/Home/Home";
 import NotFound from "./containers/NotFound/NotFound";
 import Location from "./containers/Location/Location";
+import ApartmentPage from "./components/ApartmentPage/ApartmentPage";
+
+
+
 
 function App() {
     return (

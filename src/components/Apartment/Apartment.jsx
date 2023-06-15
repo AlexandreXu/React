@@ -11,8 +11,8 @@ const Apartment = ({ item }) => {
 
   return (
     <div onClick={handleClick} className={styles.apartment}>
-      <h2>{item.title}</h2>
-      <p>{item.description}</p>
+      <h2 className={styles.title}>{item.title}</h2>
+      <p className={styles.description}>{item.description}</p>
     </div>
   );
 }

@@ -15,13 +15,17 @@ const ApartmentPage = ({ match }) => {
   return (
     <>
       <Header />
+
       {apartment && (
         <div className={styles.apartmentPage}>
           <img src={apartment.cover} alt={apartment.title} />
           <h1>{apartment.title}</h1>
           <p>{apartment.description}</p>
+          <h2>Host: {apartment.host.name}</h2>
+          <img src={apartment.host.picture} alt={apartment.host.name} />
         </div>
       )}
+
       <Footer />
     </>
   );
