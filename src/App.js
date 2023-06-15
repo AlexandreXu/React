@@ -1,36 +1,27 @@
 // App.js
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import data from './data.json';
-import Apartment from './Apartment';
+import {BrowserRouter, Navigate, Route, Routes} from 'react-router-dom';
+import LayoutMain from "./layouts/LayoutMain/LayoutMain";
+import Home from "./containers/Home/Home";
+import NotFound from "./containers/NotFound/NotFound";
+import Location from "./containers/Location/Location";
 
 function App() {
-  return (
-    <Router>
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>Edit <code>src/App.js</code> and save to reload.</p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-        <div className="App-content">
-          {data.map((apartment) => (
-            <Apartment key={apartment.id} title={apartment.title} description={apartment.description} />
-          ))}
-        </div>
-
-      </div>
-    </Router>
-  );
+    return (
+            <div className="App">
+                <LayoutMain>
+                    <BrowserRouter>
+                        <Routes>
+                            <Route path='home' element={<Home/>}/>
+                            <Route path='location/:id' element={<Location/>}/>
+                            <Route path="/404" element={ <NotFound /> } />
+                            <Route path="*" element={ <Navigate to="/404" />} />
+                        </Routes>
+                    </BrowserRouter>
+                </LayoutMain>
+            </div>
+    );
 }
 
 export default App;
