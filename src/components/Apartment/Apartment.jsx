@@ -10,8 +10,8 @@ const Apartment = ({ item }) => {
   }
 
   return (
-    <div onClick={handleClick}>
-      <h2 className={styles.test}>{item.title}</h2>
+    <div onClick={handleClick} className={styles.apartment}>
+      <h2>{item.title}</h2>
       <p>{item.description}</p>
     </div>
   );

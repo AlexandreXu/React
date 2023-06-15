@@ -1,0 +1,10 @@
+.banner {
+    height: 400px;
+    background-image: url('../../assets/montagne04.jpg'); /* Remplacer 'banner-image.jpg' par le nom de l'image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
