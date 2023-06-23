@@ -1,0 +1,48 @@
+.aboutPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url('./Image\ React\ 2.jpg') no-repeat center center / cover;
+    height: 25vh;
+}
+
+.headingContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion {
+    width: 100%;
+    max-width: 500px;
+}
+
+.accordionItem {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+.accordionItemActive, .accordionItem:hover {
+    background-color: #ddd;
+}
+
+.accordionContent {
+    padding: 0 18px;
+    background-color: white;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    max-height: 0px;
+}
+
+.accordionContentActive {
+    max-height: 200px;
+}

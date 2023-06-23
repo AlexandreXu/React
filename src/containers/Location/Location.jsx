@@ -4,6 +4,7 @@ import data from '../../data.json';
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import styles from "./Location.module.css";
+import ReactStars from "react-rating-stars-component";
 
 const Location = () => {
     const { id } = useParams();
@@ -20,13 +21,17 @@ const Location = () => {
             <div className={styles.container}>
                 {apartment && (
                     <>
-                        <img src={apartment.picture} alt="apartment" />
+                        <img className={styles.apartmentImage} src={apartment.picture} alt="apartment" />
                         <h1>{apartment.title}</h1>
                         <p>{apartment.description}</p>
                         <h2>{apartment.host.name}</h2>
-                        <img src={apartment.host.picture} alt="host" />
-                        {/* Remplacez "placeholder-rating" par la logique de rendu de votre note */}
-                        <p>Rating: placeholder-rating</p>
+                        <img className={styles.hostImage} src={apartment.host.picture} alt="host" />
+                        <ReactStars
+                            count={5}
+                            value={apartment.rating} // Assurez-vous que la propriété "rating" existe dans vos données
+                            size={24}
+                            activeColor="#ffd700"
+                        />
                     </>
                 )}
             </div>

@@ -5,7 +5,7 @@ import LayoutMain from "./layouts/LayoutMain/LayoutMain";
 import Home from "./containers/Home/Home";
 import NotFound from "./containers/NotFound/NotFound";
 import Location from "./containers/Location/Location";
-import ApartmentPage from "./components/ApartmentPage/ApartmentPage";
+import About from "./containers/About/About";
 
 
 
@@ -20,6 +20,7 @@ function App() {
                             <Route path='location/:id' element={<Location/>}/>
                             <Route path="/404" element={ <NotFound /> } />
                             <Route path="*" element={ <Navigate to="/404" />} />
+                            <Route path='about' element={<About/>}/>
                         </Routes>
                     </BrowserRouter>
                 </LayoutMain>
