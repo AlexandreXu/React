@@ -46,3 +46,9 @@
 .accordionContentActive {
     max-height: 200px;
 }
+
+.backgroundImage {
+    background-image: url('./Image\ React\ 2.jpg');
+    background-size: cover;
+    background-position: center;
+}

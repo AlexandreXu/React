@@ -28,7 +28,7 @@ const Location = () => {
                         <img className={styles.hostImage} src={apartment.host.picture} alt="host" />
                         <ReactStars
                             count={5}
-                            value={apartment.rating} // Assurez-vous que la propriété "rating" existe dans vos données
+                            value={apartment.rating}
                             size={24}
                             activeColor="#ffd700"
                         />

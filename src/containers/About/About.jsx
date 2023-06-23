@@ -5,28 +5,19 @@ import Accordion from '../Accordion/Accordion';
 import styles from './About.module.css';
 
 const About = () => {
-  const sections = [
-    { title: "Fiabilité", content: "Contenu fiabilité..." },
-    { title: "Respect", content: "Contenu respect..." },
-    { title: "Service", content: "Contenu service..." },
-    { title: "Sécurité", content: "Contenu sécurité..." }
-  ];
+    return (
+        <div className={styles.about}>
+            <Header />
 
-  return (
-    <div className={styles.about}>
-      <Header />
+            <div className={styles.backgroundImage}>
+                {/* Cette div sera remplie avec l'image de fond définie dans le CSS */}
+            </div>
 
-      <div className={styles.imageContainer}>
-        {/* Mettez votre image de background ici */}
-      </div>
+            <Accordion />
 
-      {sections.map((section, index) => (
-        <Accordion key={index} title={section.title} content={section.content} />
-      ))}
-
-      <Footer />
-    </div>
-  );
+            <Footer />
+        </div>
+    );
 };
 
 export default About;
