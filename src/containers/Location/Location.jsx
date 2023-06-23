@@ -4,6 +4,7 @@ import data from '../../data.json';
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import styles from "./Location.module.css";
+import Accordion from "../Accordion/Accordion";
 import ReactStars from "react-rating-stars-component";
 
 const Location = () => {
@@ -22,16 +23,24 @@ const Location = () => {
                 {apartment && (
                     <>
                         <img className={styles.apartmentImage} src={apartment.picture} alt="apartment" />
-                        <h1>{apartment.title}</h1>
-                        <p>{apartment.description}</p>
-                        <h2>{apartment.host.name}</h2>
-                        <img className={styles.hostImage} src={apartment.host.picture} alt="host" />
-                        <ReactStars
-                            count={5}
-                            value={apartment.rating}
-                            size={24}
-                            activeColor="#ffd700"
-                        />
+                        <div className={styles.titleBlock}>
+                            <h1>{apartment.title}</h1>
+                            <h2>{apartment.location}</h2>
+                            <div className={styles.hostInfo}>
+                                <h3>{apartment.host.name}</h3>
+                                <ReactStars
+                                    count={5}
+                                    value={apartment.rating}
+                                    size={24}
+                                    activeColor="#ffd700"
+                                />
+                            </div>
+                            <Accordion title="Description">
+                                <p>{apartment.description}</p>
+                            </Accordion>
+                            <Accordion title="Équipement">
+                            </Accordion>
+                        </div>
                     </>
                 )}
             </div>
@@ -39,5 +48,4 @@ const Location = () => {
         </>
     );
 };
-
 export default Location;
