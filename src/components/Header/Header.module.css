@@ -4,3 +4,8 @@
     align-items: center;
     padding: 20px;
 }
+
+.test {
+    fill: white;
+    background-color: red;
+}

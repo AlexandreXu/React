@@ -1,6 +1,6 @@
 .banner {
     height: 400px;
-    background-image: url('../../assets/montagne04.jpg'); /* Remplacer 'banner-image.jpg' par le nom de l'image */
+    background-image: url('../../assets/IMG.png');
     background-size: cover;
     background-position: center;
     display: flex;

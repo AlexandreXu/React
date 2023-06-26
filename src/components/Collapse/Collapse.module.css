@@ -1,0 +1,43 @@
+.title {
+    padding: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: #FF6060;
+}
+
+.titleSelected {
+    padding: 20px;
+    font-weight: bold;
+    background-color: #FF6060;
+    color: white;
+}
+
+.content {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.6s ease;
+    color: #FF6060;
+    background-color: grey;
+    padding: 0 20px;
+}
+
+.contentShow {
+    height: auto;
+    padding: 20px;
+    color: #FF6060;
+    background-color: #F5F5F5;
+}
+
+.item {
+    max-width: 1023px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 1023px) {
+    .item {
+        max-width: 1023px;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+}
