@@ -5,45 +5,120 @@
     padding: 2rem;
 }
 
-.apartmentImage, .hostImage {
-    width: 100%;
-    max-width: 600px;
-    object-fit: cover;
-}
-
-.apartmentImage {
-    margin-bottom: 2rem;
-}
-
-h1 {
-    font-size: 2em;
-    color: #333;
-}
-
-h2 {
-    font-size: 1.8em;
-    color: #333;
-}
-
 .titleBlock {
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: #FF6060;
+    max-width: 800px;
+    width: 100%;
+}
+
+.titleBlock h1,
+.titleBlock h2 {
+    margin: 0;
 }
 
 .tags {
-    font-size: 1.2em;
-    color: #666;
-    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    max-width: 800px;
+    width: 100%;
+    justify-content: flex-start;
+    order: 1;
+}
+
+.tags span {
+    background-color: #FF6060;
+    color: #fff;
+    padding: 0.5rem;
+    margin: 5px;
+    border-radius: 15px;
 }
 
 .hostInfo {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
+    justify-content: flex-end;
+    max-width: 800px;
+    width: 100%;
+    order: 0;
 }
 
-.hostInfo h3 {
-    margin-bottom: 10px;
+.hostImage {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: #C4C4C4;
+    object-fit: cover;
+    margin-right: 1rem;
+}
+
+.hostName {
+    color: #FF6060;
+}
+
+.rating {
+    align-self: flex-start;
+    max-width: 800px;
+    width: 100%;
+    order: 2;
+}
+
+.imageContainer {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 600px;
+}
+
+.apartmentImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.buttonPrev,
+.buttonNext {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.buttonPrev {
+    left: 10px;
+}
+
+.buttonNext {
+    right: 10px;
+}
+
+.collapseContainer {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    width: 100%;
+    order: 3;
+}
+
+@media (max-width: 768px) {
+    .titleBlock,
+    .tags,
+    .hostInfo,
+    .rating,
+    .collapseContainer {
+        order: initial;
+    }
+
+    .hostInfo,
+    .collapseContainer {
+        flex-direction: column;
+        align-items: center;
+    }
 }
