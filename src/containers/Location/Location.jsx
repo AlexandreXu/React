@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from "react";
 import {useParams} from "react-router-dom";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import data from '../../data.json';
-import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import styles from "./Location.module.css";
-import ReactStars from "react-rating-stars-component";
 import Collapse from "../../components/Collapse/Collapse";
+import Stars from "../../assets/icons/Stars";
 
 const Location = () => {
     const {id} = useParams();
@@ -25,16 +25,31 @@ const Location = () => {
         setCurrentImage(prev => (prev - 1 + apartment.pictures.length) % apartment.pictures.length);
     }
 
+    const displayStars = (rating) => {
+        console.log(rating);
+        const arrayRatings = [];
+        for (let i = 0; i < 5; i++) {
+            arrayRatings.push(i + 1 <= rating ? <Stars className={styles.redStar}/> : <Stars className={styles.grayStar}/> )
+        }
+        return arrayRatings;
+    }
+
     return (
         <>
-            <Header/>
             <div className={styles.container}>
                 {apartment && (
                     <>
                         <div className={styles.imageContainer}>
                             <img className={styles.apartmentImage} src={apartment.pictures[currentImage]} alt="apartment"/>
-                            <button className={styles.previousButton} onClick={handlePrevious}>Previous</button>
-                            <button className={styles.nextButton} onClick={handleNext}>Next</button>
+                            {apartment.pictures.length > 1 && (
+                                <>
+                                    <button className={styles.previousButton} onClick={handlePrevious}><IoIosArrowBack /></button>
+                                    <button className={styles.nextButton} onClick={handleNext}><IoIosArrowForward /></button>
+                                    <p className={styles.imageNumber}>
+                                        {currentImage + 1}/{apartment.pictures.length}
+                                    </p>
+                                </>
+                            )}
                         </div>
                         <div className={styles.titleBlock}>
                             <div>
@@ -49,12 +64,7 @@ const Location = () => {
                             <div className={styles.hostInfo}>
                                 <img src={apartment.host.picture} alt={apartment.host.name}/>
                                 <h3>{apartment.host.name}</h3>
-                                <ReactStars
-                                    count={5}
-                                    value={apartment.rating}
-                                    size={24}
-                                    activeColor="#ffd700"
-                                />
+                                {displayStars(apartment.rating)}
                             </div>
                         </div>
                         <div className={styles.descriptionAndEquipments}>
@@ -64,7 +74,6 @@ const Location = () => {
                     </>
                 )}
             </div>
-            <Footer/>
         </>
     );
 };

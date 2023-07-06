@@ -7,11 +7,15 @@ const Collapse = ({item}) => {
     const [selected, setSelected] = useState(false);
 
     return (
-        <div className={styles.item} onClick={() => setSelected(!selected)}>
-            <div className={selected ? styles.titleSelected : styles.title}>{item.title} {selected ? <ArrowDown/> : <ArrowUp/>}</div>
+        <div className={styles.item}>
+            <div className={selected ? styles.titleSelected : styles.title}>{item.title}
+                {selected
+                    ? <ArrowDown onClick={() => setSelected(!selected)} />
+                    : <ArrowUp onClick={() => setSelected(!selected)} />}
+            </div>
             <div className={selected ? styles.contentShow : styles.content}>
                 {Array.isArray(item.content)
-                    ?   item.content.map((text) => <p>{text}</p>)
+                    ?  <ul> {item.content.map((text) => <li className={styles.equipment}>{text}</li>)} </ul>
                     :   item.content
                 }
             </div>

@@ -1,10 +1,11 @@
+import Footer from "../../components/Footer/Footer";
+
 const LayoutMain = ({children}) => {
 
     return (
         <>
-            <header>header</header>
             <main>{children}</main>
-            <footer>footer</footer>
+            <Footer/>
         </>
     )
 }

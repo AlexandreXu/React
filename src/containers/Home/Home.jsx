@@ -11,7 +11,6 @@ const Home = () => {
 
   return (
     <>
-      <Header />
 
       <Banner />
 
@@ -20,8 +19,6 @@ const Home = () => {
           <Apartment key={apartment.id} item={apartment}/>
         ))}
       </div>
-
-      <Footer />
     </>
   );
 }

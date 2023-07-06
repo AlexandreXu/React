@@ -10,9 +10,11 @@ const Apartment = ({ item }) => {
   }
 
   return (
-    <div onClick={handleClick} className={styles.apartment}>
+    <div onClick={handleClick} 
+         className={styles.apartment} 
+         style={{backgroundImage: `url(${item.cover})`}}
+    >
       <h2 className={styles.title}>{item.title}</h2>
-      <p className={styles.description}>{item.description}</p>
     </div>
   );
 }

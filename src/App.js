@@ -6,8 +6,7 @@ import Home from "./containers/Home/Home";
 import NotFound from "./containers/NotFound/NotFound";
 import Location from "./containers/Location/Location";
 import About from "./containers/About/About";
-
-
+import Header from "./components/Header/Header";
 
 
 function App() {
@@ -15,6 +14,7 @@ function App() {
             <div className="App">
                 <LayoutMain>
                     <BrowserRouter>
+                        <Header/>
                         <Routes>
                             <Route path='home' element={<Home/>}/>
                             <Route path='location/:id' element={<Location/>}/>

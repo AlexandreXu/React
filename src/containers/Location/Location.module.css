@@ -1,14 +1,10 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     padding: 2rem;
 }
 
 .imageContainer {
     position: relative;
     width: 100%;
-    max-width: 600px;
     height: 500px;
     margin-bottom: 2rem;
 }
@@ -43,7 +39,6 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    max-width: 600px;
     margin-bottom: 2rem;
 }
 
@@ -55,7 +50,7 @@ h1 {
 
 h2 {
     font-size: 1.8em;
-    color: #FF6060;
+    color: white;
     margin-bottom: 1rem;
 }
 
@@ -75,9 +70,6 @@ h2 {
 }
 
 .hostInfo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     margin-bottom: 20px;
 }
 
@@ -97,8 +89,27 @@ h2 {
 .descriptionAndEquipments {
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    max-width: 600px;
+    gap: 30px;
+}
+
+.redStar {
+    fill: red;
+}
+
+.grayStar {
+    fill: gray;
+}
+
+.imageNumber {
+    position: absolute;
+    bottom: 10px;
+    color: white;
+    font-weight: bold;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
 @media (max-width: 768px) {

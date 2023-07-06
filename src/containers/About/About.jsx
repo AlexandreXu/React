@@ -27,7 +27,6 @@ const About = () => {
 
     return (
         <div className={styles.about}>
-            <Header />
 
             <div className={styles.backgroundImage}>
                 {/* Cette div sera remplie avec l'image de fond définie dans le CSS */}
@@ -38,8 +37,6 @@ const About = () => {
                     <Collapse item={item} key={i}/>
                 ))}
             </div>
-
-            <Footer />
         </div>
     );
 };

@@ -22,22 +22,26 @@
 }
 
 .contentShow {
-    height: auto;
-    padding: 20px;
+    height: 80%;
+    padding: 20px 20px 0 20px;
     color: #FF6060;
     background-color: #F5F5F5;
 }
 
 .item {
-    max-width: 1023px;
-    margin: auto;
-    margin-bottom: 30px;
+    flex: 1;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.equipment {
+    text-align: left;
+
 }
 
 @media (max-width: 1023px) {
-    .item {
-        max-width: 1023px;
-        margin: auto;
-        margin-bottom: 20px;
-    }
+
 }
