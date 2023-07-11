@@ -1,15 +1,11 @@
-.title {
-    padding: 20px;
+.title, .titleSelected {
+    padding: 10px 20px; /* 10px pour le padding vertical, 20px pour le padding horizontal */
     font-weight: bold;
     color: white;
     background-color: #FF6060;
-}
-
-.titleSelected {
-    padding: 20px;
-    font-weight: bold;
-    background-color: #FF6060;
-    color: white;
+    display: flex; /* Ajoute flexbox */
+    justify-content: space-between; /* Distribue l'espace entre les éléments */
+    align-items: center; /* Centrer les éléments verticalement */
 }
 
 .content {
@@ -20,7 +16,7 @@
 }
 
 .contentShow {
-   padding: 20px 20px 0 20px;
+   padding: 10px 20px 0 20px; /* 10px pour le padding vertical, 20px pour le padding horizontal */
    transition: all 0.6s ease-in-out;
    height: 80%;
    background-color: #F5F5F5;
@@ -37,7 +33,6 @@ ul {
 
 .equipment {
     text-align: left;
-
 }
 
 @media (max-width: 1023px) {
