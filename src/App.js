@@ -16,7 +16,7 @@ function App() {
                     <BrowserRouter>
                         <Header/>
                         <Routes>
-                            <Route path='home' element={<Home/>}/>
+                            <Route path='/' element={<Home/>}/>
                             <Route path='location/:id' element={<Location/>}/>
                             <Route path="/404" element={ <NotFound /> } />
                             <Route path="*" element={ <Navigate to="/404" />} />

@@ -5,6 +5,10 @@
     padding: 40px;
 }
 
+.link {
+    margin-right: 57px;
+}
+
 .test {
     fill: white;
     background-color: red;

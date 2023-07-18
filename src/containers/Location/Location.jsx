@@ -26,7 +26,6 @@ const Location = () => {
     }
 
     const displayStars = (rating) => {
-        console.log(rating);
         const arrayRatings = [];
         for (let i = 0; i < 5; i++) {
             arrayRatings.push(i + 1 <= rating ? <Stars className={styles.redStar}/> : <Stars className={styles.grayStar}/> )
@@ -52,18 +51,20 @@ const Location = () => {
                             )}
                         </div>
                         <div className={styles.titleBlock}>
-                            <div>
-                                <h1>{apartment.title}</h1>
-                                <h2>{apartment.location}</h2>
-                                <div className={styles.tags}>
-                                    {apartment.tags.map((tag, index) => (
-                                        <span key={index} className={styles.tag}>{tag}</span>
-                                    ))}
-                                </div>
-                            </div>
+                            <h1>{apartment.title}</h1>
                             <div className={styles.hostInfo}>
-                                <h3>{apartment.host.name}</h3>
                                 <img src={apartment.host.picture} alt={apartment.host.name}/>
+                                <h3>{apartment.host.name}</h3>
+                            </div>
+                        </div>
+                        <h2>{apartment.location}</h2>
+                        <div className={styles.tagsAndRating}>
+                            <div className={styles.tags}>
+                                {apartment.tags.map((tag, index) => (
+                                    <span key={index} className={styles.tag}>{tag}</span>
+                                ))}
+                            </div>
+                            <div>
                                 {displayStars(apartment.rating)}
                             </div>
                         </div>
