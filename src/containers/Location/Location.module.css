@@ -45,13 +45,13 @@
 .titleBlock h1 {
     font-size: 36px;
     color: #FF6060;
+    margin: 0;
 }
 
 .titleBlock h2 {
     font-size: 18px;
     color: #FF6060;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0;
     align-self: flex-start;
     text-align: left;
 }
